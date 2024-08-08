@@ -12,6 +12,4 @@ def dataset_dataloader(data_root):
 
     train_loader = torch.utils.data.DataLoader(dataset=train_dataset, batch_size=64, shuffle=True, num_workers=4)
     test_loader = torch.utils.data.DataLoader(dataset=test_dataset, batch_size=64, shuffle=False, num_workers=4)
-    print("Test data shape:", test_dataset.data.shape)
-    print("Train data shape:", train_dataset.data.shape)
     return(train_loader, test_loader)
