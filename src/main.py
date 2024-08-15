@@ -11,7 +11,7 @@ def load_config(config_path):
 def main(config_path):
     config = load_config(config_path)
     data_root = config['paths']['data']
-    train_loader, test_loader=dataset_dataloader.dataset_dataloader(data_root)
+    train_loader, test_loader,val_loader=dataset_dataloader.dataset_dataloader(data_root)
 
 if __name__ == "__main__":
     main()
