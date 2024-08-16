@@ -9,7 +9,6 @@ def train(train_loader, test_loader, val_loader):
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr=0.001)
 
-
     num_epochs = 11
     for epoch in range(num_epochs):
         model.train()

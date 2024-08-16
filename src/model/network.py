@@ -9,7 +9,6 @@ class ResidualBlock(nn.Module):
         self.conv2 = nn.Conv2d(out_channels, out_channels, kernel_size=3, stride=1, padding=1, bias=False)
         self.bn2 = nn.BatchNorm2d(out_channels)
         self.downsample = downsample
-
     def forward(self, x):
         shortcut = x
         if self.downsample is not None:
@@ -22,6 +21,7 @@ class ResidualBlock(nn.Module):
         out += shortcut
         return out
 
+
 class ResNet(nn.Module):
     def __init__(self, num_classes=10):
         super(ResNet, self).__init__()
@@ -33,7 +33,6 @@ class ResNet(nn.Module):
         self.layer3 = self._make_layer(32, 64, stride=2)
         self.avgpool = nn.AdaptiveAvgPool2d((1, 1))
         self.fc = nn.Linear(64, num_classes)
-
     def _make_layer(self, in_channels, out_channels, stride):
         downsample = None
         if stride != 1 or in_channels != out_channels:
@@ -42,7 +41,6 @@ class ResNet(nn.Module):
                 nn.BatchNorm2d(out_channels),
             )
         return ResidualBlock(in_channels, out_channels, stride, downsample)
-
     def forward(self, x):
         x = self.conv1(x)
         x = self.bn1(x)
