@@ -33,6 +33,7 @@ class ResNet(nn.Module):
         self.layer3 = self._make_layer(32, 64, stride=2)
         self.avgpool = nn.AdaptiveAvgPool2d((1, 1))
         self.fc = nn.Linear(64, num_classes)
+
     def _make_layer(self, in_channels, out_channels, stride):
         downsample = None
         if stride != 1 or in_channels != out_channels:
