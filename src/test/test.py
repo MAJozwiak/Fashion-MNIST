@@ -1,7 +1,8 @@
 import torch
-def test(test_loader,model,device):
+def test(test_loader,model,model_path,device):
     correct = 0
     total = 0
+    model.load_state_dict(torch.load(model_path))
     with torch.no_grad():
         for inputs, labels in test_loader:
             inputs, labels = inputs.to(device), labels.to(device)

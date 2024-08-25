@@ -11,17 +11,18 @@ def load_config(config_path):
 
 @click.command()
 @click.option('--config-path', default='../config.yaml', help='Path to the .yaml file')
-def main(config_path):
+def main(config_path) -> None:
     config = load_config(config_path)
     data_root = config['paths']['data']
-
+    model_path = config['paths']['model_path']
+    print(model_path)
     train_loader, test_loader,val_loader=dataset_dataloader.dataset_dataloader(data_root)
-    model,device=training.train(train_loader, test_loader,val_loader)
-    test.test(test_loader,model,device)
+    model,device=training.train(train_loader, val_loader,model_path,False)
+    test.test(test_loader,model,model_path,device)
 
     feature_extractor = pca.extractor(model,device)
-    features, labels = pca.extract_features(test_loader, feature_extractor, device)
-    pca.apply_pca(features, labels, num_components=2)
+    features, labels,images = pca.extract_features(test_loader, feature_extractor, device)
+    pca.apply_pca(features,labels,images, num_components=2)
 
 if __name__ == "__main__":
     main()

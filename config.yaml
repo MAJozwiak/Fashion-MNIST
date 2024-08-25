@@ -1,2 +1,3 @@
 paths:
   data: 'C:\Users\marta\PycharmProjects\second\Fasion-MNIST\data'
+  model_path: '..\best_model\model.pth'
