@@ -58,7 +58,6 @@ def apply_pca(features: np.ndarray, labels: np.ndarray, images: np.ndarray, num_
         ab = AnnotationBbox(imagebox, (x, y), frameon=False, pad=0.1)
         ax.add_artist(ab)
 
-    plt.colorbar(scatter, label='Classes')
     plt.xlabel('1')
     plt.ylabel('2')
     plt.title('PCA of Fashion MNIST Features')

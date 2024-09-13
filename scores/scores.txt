@@ -1,1 +1,1 @@
-Final accuracy: 90.38%
+Final accuracy: 90.24%
