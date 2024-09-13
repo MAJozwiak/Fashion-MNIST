@@ -1,3 +1,4 @@
 paths:
-  data: 'C:\Users\marta\PycharmProjects\second\Fasion-MNIST\data'
+  data: '..\data'
   model_path: '..\best_model\model.pth'
+  scores_path: '..\scores\scores.txt'

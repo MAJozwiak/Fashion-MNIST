@@ -2,8 +2,8 @@ import torchvision
 import torchvision.transforms as transforms
 import torch.utils.data as data
 from torch.utils.data import random_split
-
-def dataset_dataloader(data_root,val_split=0.1):
+from typing import Tuple
+def dataset_dataloader(data_root: str, val_split: float = 0.1) -> Tuple[data.DataLoader, data.DataLoader, data.DataLoader]:
     transform = transforms.Compose(
         [transforms.ToTensor(),])
 

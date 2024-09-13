@@ -3,7 +3,7 @@ import torch
 
 
 class EarlyStopping:
-    def __init__(self, patience=7, verbose=False, delta=0, path='checkpoint.pt', trace_func=print)-> None:
+    def __init__(self, patience: int = 7, verbose: bool = False, delta: float = 0, path: str = 'checkpoint.pt', trace_func=print) -> None:
         self.patience = patience
         self.verbose = verbose
         self.counter = 0
@@ -14,7 +14,7 @@ class EarlyStopping:
         self.path = path
         self.trace_func = trace_func
 
-    def __call__(self, val_loss, model)-> None:
+    def __call__(self, val_loss: float, model: torch.nn.Module)-> None:
 
         score = -val_loss
         if self.best_score is None:
@@ -30,7 +30,7 @@ class EarlyStopping:
             self.save_checkpoint(val_loss, model)
             self.counter = 0
 
-    def save_checkpoint(self, val_loss, model)-> None:
+    def save_checkpoint(self, val_loss: float, model: torch.nn.Module)-> None:
         if self.verbose:
             self.trace_func(
                 f'Validation loss decreased ({self.val_loss_min:.6f} --> {val_loss:.6f}).  Saving model ...')

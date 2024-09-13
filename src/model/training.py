@@ -21,7 +21,7 @@ def train(train_loader, val_loader, model_path: str, pretrained: bool) -> Tuple[
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr=0.0001)
     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', factor=0.1, patience=4)
-    early_stopping = EarlyStopping(patience=7, verbose=True, path=model_path)
+    early_stopping = EarlyStopping(patience=5, verbose=True, path=model_path)
     num_epochs = 1000
     for epoch in range(num_epochs):
         model.train()
