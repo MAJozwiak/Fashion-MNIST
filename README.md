@@ -8,6 +8,7 @@ The aim of this project is to train a ResNet model using the Fashion-MNIST datas
 In this project, two neural network architectures were implemented. The pretrained ResNet-18 model from torchvision and a ResNet-8 architecture, built from scratch, and not using any pretrained weights.
 
 - **ResNet-18:**
+
  ![ResNet-18](https://github.com/MAJozwiak/Fashion-MNIST/blob/train/screenshots/Structure-of-the-Resnet-18-Model.png)
 ## File structure and description:
 ```
@@ -72,5 +73,5 @@ After training the model, the final layer was removed to extract feature. Princi
 Achieved the following accuracy results:
  - **ResNet-8 -**
  90.38%
-**ResNet-18 -**
+ - **ResNet-18 -**
  89.52%
