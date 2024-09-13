@@ -1,16 +1,16 @@
 # Classification of Fashion-MNIST images
-## Description:
+## Description
 The aim of this project is to train a ResNet model using the Fashion-MNIST dataset, which contains images of 10 different types of clothing.
 - **Link to Fashion-MNIST dataset: https://github.com/zalandoresearch/fashion-mnist**
 
 
-## ResNet-8 and ResNet-18:
+## ResNet-8 and ResNet-18
 In this project, two neural network architectures were implemented. The pretrained ResNet-18 model from torchvision and a ResNet-8 architecture, built from scratch, and not using any pretrained weights.
 
 - **ResNet-18:**
 
  ![ResNet-18](https://github.com/MAJozwiak/Fashion-MNIST/blob/train/screenshots/Structure-of-the-Resnet-18-Model.png)
-## File structure and description:
+## File structure and description
 ```
 .
 └── best_model/
@@ -57,13 +57,13 @@ In this project, two neural network architectures were implemented. The pretrain
 - **pca.py -**
  contains feature extraction and visualization,
 - **test.py -**
- saves final accuracy.
+ saves final accuracy
 
-## Added elements to enhancing the training process:
+## Added elements to enhancing the training process
  - **early stopping -**
  is a technique used to halt training when the model's performance on the validation set no longer improves, helping to prevent overfitting,
  - **sheduler -**
- is a technique that monitore the validation loss and reduce the learning rate if there is not improvment.
+ is a technique that monitore the validation loss and reduce the learning rate if there is not improvment
 
 ## Visualization of the learned features
 
