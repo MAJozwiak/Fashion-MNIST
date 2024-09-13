@@ -7,7 +7,7 @@ After training the model, the final layer was removed, and Principal Component A
 This approach allows for a visual representation of the separation between the different clothing categories, showing the model’s ability to tell them apart.
 ## ResNet-8 and ResNet-18:
 In this project, two neural network architectures were implemented. The pretrained ResNet-18 model from torchvision and a ResNet-8 architecture, built from scratch, and not using any pretrained weights.
-
+![ResNet-18](https://github.com/MAJozwiak/Fashion-MNIST/blob/train/screenshots/Structure-of-the-Resnet-18-Model.png)
 ## File structure and description:
 ```
 .
@@ -34,13 +34,23 @@ In this project, two neural network architectures were implemented. The pretrain
 │   ├── config.yaml
 ```
 
--model.pth - contains the best model, saved during training
--Fashion-MNIST.ipynb - contains data analysis
--scores.txt - contains saving accuracy scores
- -config.yaml - contains paths to the files
--dataset_dataloader.py - contains dataset and dataloader
--early_stopping.py - contains the EarlyStopping class, which implements an early stopping mechanism during model training
--network.py -  contains implementation of ResNet-8
-training.py - contains function responsible for model training and evaluation
--pca.py - contains feature extraction and visualization
-test.py - saves final accuracy
+- **model.pth -** 
+ contains the best model, saved during training,
+- **Fashion-MNIST.ipynb -**
+ contains data analysis
+- **scores.txt -**
+ contains saving accuracy scores
+- **config.yaml -**
+ contains paths to the files
+- **dataset_dataloader.py -**
+ contains dataset and dataloader
+- **early_stopping.py -**
+ contains the EarlyStopping class, which implements an early stopping mechanism during model training
+- **network.py -**
+ contains implementation of ResNet-8
+- **training.py -**
+ contains function responsible for model training and evaluation
+- **pca.py -**
+ contains feature extraction and visualization
+- **test.py -**
+ saves final accuracy
