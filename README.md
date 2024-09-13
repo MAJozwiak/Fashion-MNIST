@@ -40,7 +40,7 @@ In this project, two neural network architectures were implemented. The pretrain
 
 - **model.pth -** 
  contains the best model, saved during training,
-- **Fashion-MNIST.ipynb -**
+- **fashion-MNIST.ipynb -**
  contains data analysis,
 - **scores.txt -**
  contains saving accuracy scores,
