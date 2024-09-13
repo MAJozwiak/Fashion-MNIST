@@ -21,6 +21,8 @@ In this project, two neural network architectures were implemented. The pretrain
     │   ├── fashion-MNIST.ipynb
 └──scores/
     │   ├── scores.txt
+└──sreenshots/
+    └── ....
 └──src/
     │   ├── main.py
     └──dataset_dataloader/
