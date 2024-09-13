@@ -7,8 +7,8 @@ The aim of this project is to train a ResNet model using the Fashion-MNIST datas
 ## ResNet-8 and ResNet-18:
 In this project, two neural network architectures were implemented. The pretrained ResNet-18 model from torchvision and a ResNet-8 architecture, built from scratch, and not using any pretrained weights.
 
-- **ResNet-18: -**
-![ResNet-18](https://github.com/MAJozwiak/Fashion-MNIST/blob/train/screenshots/Structure-of-the-Resnet-18-Model.png)
+- **ResNet-18:**
+ ![ResNet-18](https://github.com/MAJozwiak/Fashion-MNIST/blob/train/screenshots/Structure-of-the-Resnet-18-Model.png)
 ## File structure and description:
 ```
 .
@@ -35,7 +35,7 @@ In this project, two neural network architectures were implemented. The pretrain
 │   ├── config.yaml
 ```
 
-- **Model.pth -** 
+- **model.pth -** 
  contains the best model, saved during training,
 - **Fashion-MNIST.ipynb -**
  contains data analysis,
@@ -57,10 +57,10 @@ In this project, two neural network architectures were implemented. The pretrain
  saves final accuracy.
 
 ## Added elements to enhancing the training process:
- - **Early stopping -**
+ - **early stopping -**
  is a technique used to halt training when the model's performance on the validation set no longer improves, helping to prevent overfitting,
  - **sheduler -**
- - is a technique that monitore the validation loss and reduce the learning rate if there is not improvment.
+ is a technique that monitore the validation loss and reduce the learning rate if there is not improvment.
 
 ## Visualization of the learned features
 
@@ -73,4 +73,4 @@ Achieved the following accuracy results:
  - **ResNet-8 -**
  90.38%
 **ResNet-18 -**
- - 89.52%
+ 89.52%
