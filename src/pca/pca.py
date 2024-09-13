@@ -4,23 +4,24 @@ from sklearn.decomposition import PCA
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.offsetbox import OffsetImage, AnnotationBbox
+from typing import Tuple, List, Any
 
 class ResNet8FeatureExtractor(nn.Module):
-    def __init__(self, original_model):
+    def __init__(self, original_model) -> None:
         super(ResNet8FeatureExtractor, self).__init__()
         self.features = nn.Sequential(*list(original_model.children())[:-1])
 
-    def forward(self, x):
+    def forward(self, x) -> torch.Tensor:
         return self.features(x).view(x.size(0), -1)
 
 
-def extractor(original_model,device):
+def extractor(original_model,device) -> nn.Module:
     feature_extractor = ResNet8FeatureExtractor(original_model).to(device)
     feature_extractor.eval()
     return feature_extractor
 
 
-def extract_features(test_loader, model, device):
+def extract_features(test_loader, model, device) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
     features_list = []
     labels_list = []
     images_list = []
@@ -40,7 +41,8 @@ def extract_features(test_loader, model, device):
     return features_array, labels_array, images_array
 
 
-def apply_pca(features: np.ndarray, labels: np.ndarray, images: np.ndarray, num_components=2):
+def apply_pca(features: np.ndarray, labels: np.ndarray, images: np.ndarray, num_components=2)-> None:
+    features_list: List[np.ndarray] = []
     pca = PCA(n_components=num_components)
     reduced_features = pca.fit_transform(features)
     plt.figure(figsize=(15, 10))

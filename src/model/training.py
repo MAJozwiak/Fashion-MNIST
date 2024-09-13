@@ -5,9 +5,10 @@ from src.model import network
 from torchvision import models
 from src.model.early_stopping import EarlyStopping
 import torch.nn.functional as F
+from typing import Tuple
 
 
-def train(train_loader, val_loader, model_path: str, pretrained: bool):
+def train(train_loader, val_loader, model_path: str, pretrained: bool) -> Tuple[nn.Module, torch.device]:
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     if pretrained:
         model = models.resnet18(weights=models.ResNet18_Weights.IMAGENET1K_V1)

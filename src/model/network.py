@@ -9,7 +9,7 @@ class ResidualBlock(nn.Module):
         self.conv2 = nn.Conv2d(out_channels, out_channels, kernel_size=3, stride=1, padding=1, bias=False)
         self.bn2 = nn.BatchNorm2d(out_channels)
         self.downsample = downsample
-    def forward(self, x):
+    def forward(self, x) -> torch.Tensor:
         shortcut = x
         if self.downsample is not None:
             shortcut = self.downsample(x)
@@ -23,7 +23,7 @@ class ResidualBlock(nn.Module):
 
 
 class ResNet(nn.Module):
-    def __init__(self, num_classes=10):
+    def __init__(self, num_classes=10)-> None:
         super(ResNet, self).__init__()
         self.conv1 = nn.Conv2d(1, 16, kernel_size=3, stride=1, padding=1, bias=False)
         self.bn1 = nn.BatchNorm2d(16)
@@ -33,7 +33,7 @@ class ResNet(nn.Module):
         self.layer3 = self._make_layer(32, 64, stride=2)
         self.avgpool = nn.AdaptiveAvgPool2d((1, 1))
         self.fc = nn.Linear(64, num_classes)
-    def _make_layer(self, in_channels, out_channels, stride):
+    def _make_layer(self, in_channels, out_channels, stride)-> ResidualBlock:
         downsample = None
         if stride != 1 or in_channels != out_channels:
             downsample = nn.Sequential(
@@ -41,7 +41,7 @@ class ResNet(nn.Module):
                 nn.BatchNorm2d(out_channels),
             )
         return ResidualBlock(in_channels, out_channels, stride, downsample)
-    def forward(self, x):
+    def forward(self, x) ->torch.Tensor:
         x = self.conv1(x)
         x = self.bn1(x)
         x = self.relu(x)
