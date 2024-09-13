@@ -67,7 +67,7 @@ In this project, two neural network architectures were implemented. The pretrain
 
 ## Visualization of the learned features
 
-After training the model, the final layer was removed to extract feature. Principal Component Analysis (PCA) was then applied to reduce the dimensionality of these extracted features and visualize them. This approach enables a visual representation of the separation between different clothing categories, demonstrating the model’s ability to tell them apart.
+After training the model, the final layer was removed to extract feature. Principal Component Analysis (PCA) was then applied to reduce the dimensionality of these extracted features and visualize them. This approach enables a visual representation of the separation between different clothing categories, showcasing the effectiveness of the model in telling them apart.
 ![myplot.png](screenshots%2Fmyplot.png)
 
 ## Score
