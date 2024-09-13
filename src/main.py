@@ -18,7 +18,7 @@ def main(config_path) -> None:
     scores_path= config['paths']['scores_path']
     print(model_path)
     train_loader, test_loader,val_loader=dataset_dataloader.dataset_dataloader(data_root)
-    model,device=training.train(train_loader, val_loader,model_path,True)
+    model,device=training.train(train_loader, val_loader,model_path,False)
     test.test(test_loader,model,model_path,device,scores_path)
 
     feature_extractor = pca.extractor(model,device)
