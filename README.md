@@ -1,6 +1,6 @@
 # Classification of Fashion-MNIST images
 ## Description
-The aim of this project is to train a ResNet model using the Fashion-MNIST dataset, which contains images of 10 different types of clothing.
+The aim of this project is to classify images using a ResNet model trained on the Fashion-MNIST dataset, which contains images of 10 different types of clothing.
 - **Link to Fashion-MNIST dataset: https://github.com/zalandoresearch/fashion-mnist**
 
 
